@@ -1,0 +1,162 @@
+/* RESET STYLES */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+* {
+    font-family: "Barlow Condensed";
+}
+
+#wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 1.5fr 9fr 1fr;
+}
+
+#header {
+    display:flex;
+    justify-content: start;
+    padding-left: 3vw;
+    align-items: center;
+    font-weight: bold;
+    font-size: 3vw;
+    background-color: black;
+    box-shadow: 0px 2px 7px rgb(255, 255, 255);
+    z-index: 2;
+    color: white;
+}
+
+#header .text:hover {
+    color: red;
+    cursor: pointer;
+}
+
+#content {
+    background-color: black;
+}
+
+#nameForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 12vw;
+    padding-top: 20vh;
+}
+
+
+#nameForm .entry label {
+    font-size: 2vw;
+    font-weight: bold;
+    color: white;
+}
+
+#nameForm .entry input {
+    border: 3px solid rgb(201, 201, 201);
+    border-radius: 50px;
+    height: 7vh;
+    width: 35vw;
+    padding: 2vh 2vw;
+    text-align: center;
+    font-size: 2vw;
+    outline:none;
+}
+
+#nameForm .entry input:focus {
+    border: 5px solid rgb(184, 184, 184);
+}
+
+#playGameButton {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40vh;
+    width: 20vw;
+    background-color: black;
+    border-radius: 50px;
+    border: 4px solid white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+#playGameButton:hover {
+    color: black;
+    background-color: white;
+}
+
+#gameBoard {
+    color: white;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+#scoreDisplay {
+    background-color: red;
+}
+
+#playBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    background-color: gray;
+    gap: 3px;
+}
+
+#playBoard .cell {
+    height: 90px;
+    width: 90px;
+    background-color: blue;
+}
+
+#roundDisplay {
+    background-color: green;
+}
+
+#footer {
+    background-color: black;
+    color: grey;
+    box-shadow: 0px -2px 7px rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
