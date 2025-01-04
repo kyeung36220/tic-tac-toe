@@ -222,11 +222,13 @@ function endSequence(currentPlayerTurn, isWin, playerOne, playerTwo) {
     }
     else if (currentPlayerTurn === 1 && isWin === true) {
         playerOne.win()
+        gameScreenUI.playerOneScore.style.backgroundColor = `green`
         gameScreenUI.playerOneScore.textContent = `${playerOne.name}: ${playerOne.points}`
         gameScreenUI.roundDisplayText.textContent = `${playerOne.name} Wins!`
     }
     else if (currentPlayerTurn === 2 && isWin === true) {
         playerTwo.win()
+        gameScreenUI.playerTwoScore.style.backgroundColor = `green`
         gameScreenUI.playerTwoScore.textContent = `${playerTwo.name}: ${playerTwo.points}`
         gameScreenUI.roundDisplayText.textContent = `${playerTwo.name} Wins!`
     }
