@@ -60,33 +60,6 @@ function screenManager() {
         playerOne = new player(1, startScreenUI.playerOneNameInput.value, 0)
         playerTwo = new player(2, startScreenUI.playerTwoNameInput.value, 0)
 
-        let gameBoard = document.createElement("div")
-        gameBoard.id = "gameBoard"
-        gameBoard.innerHTML =
-        `
-        <div id="scoreDisplay">
-            <div id=playerOneDisplay class="display scoreDisplay">${playerOneNameInput.value}: 0
-            </div>
-            <div id=playerTwoDisplay class="display scoreDisplay">${playerTwoNameInput.value}: 0
-            </div>
-        </div>
-        <div id="playBoard">
-            <div class=cell type=button></div>
-            <div class=cell type=button></div>
-            <div class=cell type=button></div>
-            <div class=cell type=button></div>
-            <div class=cell type=button></div>
-            <div class=cell type=button></div>
-            <div class=cell type=button></div>
-            <div class=cell type=button></div>
-            <div class=cell type=button></div>
-        </div>
-        <div id=roundDisplay class="display">
-            <div class="text">Round: 1</div>
-        </div>
-        `
-        startScreenUI.nameForm.remove()
-        startScreenUI.content.appendChild(gameBoard)
         gameManager(playerOne, playerTwo)
     }
 }
@@ -101,14 +74,16 @@ function player(playerNumber, name, points) {
 }
 
 function gameManager(playerOne, playerTwo) {
+    createGameSpace(playerOne, playerTwo)
     var gameScreenUI = gameScreenElements()
     gameScreenUI.roundDisplay.style.marginBottom = "10vh"
     let roundNumber = 0
+    gameScreenUI.roundDisplayText.textContent = `Round: 1`
     let currentPlayerTurn = Math.random() <= 0.5 ? 1 : 2
     playerDisplayFocus(currentPlayerTurn)
-    let gameCompleted = false;
+    gameCompleted = false
 
-    for (const cell of gameScreenUI.cells) {
+    for (let cell of gameScreenUI.cells) {
       cell.addEventListener("click", handleCellClick);
     }
 
@@ -214,20 +189,51 @@ function endSequence(currentPlayerTurn, isWin, playerOne, playerTwo) {
     </div>
     `
     gameScreenUI.gameBoard.appendChild(completedButtons)
-    gameScreenUI.roundDisplay.style.marginBottom = "0px"
+    gameScreenUI.roundDisplay.style.marginBottom = "0.6vh"
 
     let newGameButton = document.querySelector("#newGameButton")
     let returnButton = document.querySelector("#returnButton")
 
-    newGameButton.addEventListener("click", () =>{
-        for (const cell in gameScreenUI.cells) {
-            cell.textContent = ""
-        }
+    newGameButton.addEventListener("click", () => {
+        gameScreenUI.gameBoard.remove()
+
+        gameCompleted = false
         gameManager(playerOne, playerTwo)
+        returnButton.remove()
+        newGameButton.remove()
     })
     returnButton.addEventListener("click", () => {
         window.location.reload()
     })
 }
 
+function createGameSpace() {
+    let gameBoard = document.createElement("div")
+        gameBoard.id = "gameBoard"
+        gameBoard.innerHTML =
+        `
+        <div id="scoreDisplay">
+            <div id=playerOneDisplay class="display scoreDisplay">${playerOne.name}: ${playerOne.points}
+            </div>
+            <div id=playerTwoDisplay class="display scoreDisplay">${playerTwo.name}: ${playerTwo.points}
+            </div>
+        </div>
+        <div id="playBoard">
+            <div class=cell type=button></div>
+            <div class=cell type=button></div>
+            <div class=cell type=button></div>
+            <div class=cell type=button></div>
+            <div class=cell type=button></div>
+            <div class=cell type=button></div>
+            <div class=cell type=button></div>
+            <div class=cell type=button></div>
+            <div class=cell type=button></div>
+        </div>
+        <div id=roundDisplay class="display">
+            <div class="text">Round: 1</div>
+        </div>
+        `
+        startScreenUI.nameForm.remove()
+        startScreenUI.content.appendChild(gameBoard)
+}
 screenManager()
