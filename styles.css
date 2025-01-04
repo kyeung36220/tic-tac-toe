@@ -48,6 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header {
     display:flex;
+    gap: 1vw;
     justify-content: start;
     padding-left: 3vw;
     align-items: center;
@@ -59,8 +60,12 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-#header .text:hover {
-    color: red;
+#headerText {
+    display: flex;
+    gap: 0.5vw;
+}
+
+#header:hover {
     cursor: pointer;
 }
 
@@ -132,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 #scoreDisplay {
     display: flex;
     margin-top: 7vh;
-    gap: 5vw;
+    gap: 1vw;
 }
 
 .display {

@@ -12,14 +12,18 @@
 <body>
     <div id="wrapper">
         <div id="header">
-            <div class="text">tic tac toe</div>
+            <div id="headerText">
+                <div class="text" id="headerTextOne">tic</div>
+                <div class="text" id="headerTextTwo">tac</div>
+                <div class="text" id="headerTextThree">toe</div>
+            </div>
         </div>
         <div id="content">
             <form id="nameForm">
                 <div class="entry">
                     <div><label id="playerOneNameLabel" for="playerOneName">Player One Name</label></div>
 
-                    <input placeholder="Name Here" maxlength="20" 
+                    <input placeholder="Type Name Here" maxlength="20" 
                     class="entry" type="text" id="playerOneNameInput" 
                     name="playerOneName" required>
                 </div>
@@ -27,7 +31,7 @@
                 <div class="entry">
                     <div><label id="playerTwoNameLabel" for="playerTwoName">Player Two Name</label></div>
                     
-                    <input placeholder="Name Here" maxlength="20"
+                    <input placeholder="Type Name Here" maxlength="20"
                     class="entry" type="text" id="playerTwoNameInput"
                     name="playerTwoName" required>
                 </div>
