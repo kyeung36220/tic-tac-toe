@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 #nameForm .entry label {
-    font-size: clamp(1rem, 6vw, 50px);
+    font-size: clamp(1rem, 4vw, 50px);
     font-weight: bold;
     color: white;
 }
@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 35vw;
     padding: 2vh 2vw;
     text-align: center;
-    font-size: clamp(1rem, 4vw, 40px);
+    font-size: clamp(1rem, 4vw, 30px);
     outline:none;
 }
 
@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     justify-content: center;
     align-items: center;
-    margin-top: 40vh;
+    margin-top: 50vh;
     height: auto;
     width: 30vw;
     background-color: black;
@@ -167,17 +167,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #playBoard {
-    position: absolute;
     display: grid;
     grid-template-columns: repeat(3, 90px);
     grid-template-rows: repeat(3, 90px);
     gap: 10px;
-    top: 35vh;
+    margin-top: 5vh;
 }
 
 #playBoard .cell {
-    height: 90px;
-    width: 90px;
     background-color: white;
     border-radius: 7px;
     color: black;
@@ -185,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    padding: 42px 42px;
+    padding: 1vh 1vw;
     font-weight: bold;
 }
 
