@@ -247,3 +247,12 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     font-size: clamp(1rem, 4vw, 20px);
 }
+
+#githubImg {
+    width: clamp(2rem, 8vw, 40px);
+    margin-right: 0.7vw;
+}
+
+#githubImg:hover {
+    cursor: pointer;
+}
